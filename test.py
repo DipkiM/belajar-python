@@ -1,6 +1,6 @@
-print("apa kabar my friend?")
-a=12
-print(a)
+# print("apa kabar my friend?")
+# a=12
+# print(a)
 
 # kita bisa mengcompile python ke yang namanya BYTECODE
 # cara mengcompile, buka terminal dan tuliskan
