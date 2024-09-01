@@ -1,60 +1,19 @@
-#belajar python part7
-#operasi aritmetika
+#BELAJAR PYTHON PART8 LATIHAN PERHITUNGAN SEDERHANA
+#LATIHAN KONVERSI SATUAN TEMPERATURE
 
-#pertama kita buat sbuah variabel
+#program konversi celcius ke satuan lain
+print("\nPROGRAM KONVERSI TEMPERATURE\n")
+celcius = float(input('masukan suhu dalam celcius : '))
+print("suhu adalah ",input, 'celcius')
 
-a=10
-b=3
+#reamur (4/5c)
+reamur = (4/5) * celcius
+print("suhu dalam reamur adalah", reamur, "reamur")
 
-#operasi tambah +
-hasil = a+b
-print(a,"+",b,"=",hasil)
+#fahrenheit (9/5*c+32)
+fahrenheit = ((9/5)*celcius) + 32
+print("suhu dalam fahrenheit adalah", fahrenheit, "fahrenheit")
 
-#operasi pengurangan -
-hasil = a-b
-print(a,"-",b,"=",hasil)
-
-#operasi perkalian *
-hasil = a*b
-print(a,"*",b,"=",hasil)
-
-#operasi pembagian /
-hasil = a/b
-print(a,"/",b,"=",hasil)
-
-#operasi eksponen (pangkat) **
-hasil = a**b
-print(a,"**",b,"=",hasil)
-
-#BEBERAPA OPERATOR YG SERING DIPAKAI DI BAHASA LAIN
-
-#operasi modulus % (sisa pembagian)
-
-hasil=a%b
-print(a,'%',b,"=",hasil)
-
-#operasi floor division //
-# ini adalah hasil pembagian yg dibulatkan, krna 10/3 = 3,33333 dia akan dibulatkan hanya menjadi 3
-hasil= a//b
-print(a,"//",b,"=",hasil)
-
-#PRIORITAS OPERASI (OPERASI MANA YG AKAN DIDLUANKAN)
-
-'''
-1.() operasi didalam kurung akan didluankan
-2.eksponen **
-3.perkalian dan kawan kawan * / % //
-4.pertambahan dan pengurangn + -
-'''
-x=3
-y=2
-z=4
-
-hasil = x ** z * y + x / y - x % z // y
-print(x,'**',z,'*',y,'+',x,'/',y,'-',x,'%',z,'//',y,'=',hasil)
-
-hasil = x + y * z
-print(x,'+',y,'*',z)
-
-hasil = (x+y) * z
-print('(',x,'+',y,")",'*',z)
+#kelvin (c+273)
+kelvin = celcius+273
+print("suhu dalam kelvin adalah", kelvin, "kelvin")
