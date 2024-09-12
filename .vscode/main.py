@@ -1,6 +1,6 @@
-#codingan orbi
-print("mari kita buat perhitungan luas lingkaran.")
-phi = float(input("masukan nilai π = "))
-r = int(input("masukan nilai r = "))
+#codingan aku
+print("mari kita menghitung luas lingkaran\nsekarang kita bisa memasukan nilai nilai nya terlebih dahulu")
+phi = float(input("nilai π = "))
+r = int(input("nilai r = "))
 LuasLingkaran = phi*r**2
-print("luas lingkaran = ",LuasLingkaran)
+print("luas lingkaran ialah = ",LuasLingkaran)
