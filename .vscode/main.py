@@ -1,72 +1,83 @@
-#belajar python part15
-#operasi dan manipulasi string part1
+#belajar python part16
+#operasi dan manipulasi string part2
 
-# 1. menyambung string (concatenate)
-#misal kita buat yang simple
-nama_pertama = "Ucup"
-nama_tengah = "D"
-nama_akhir  = "Fame"
+#beberapa operator method
 
-nama_lengkap = nama_pertama+" "+nama_tengah+"'"+nama_akhir
-print(nama_lengkap)#ini akan jadi aneh karena kita menempelkan smua string nya, gimana kalau kita ingin menambahkan spasi? dngn cara memnambhkan petik dua dngan value spasi di antara string nya
+# 1. merubah case dari string
+#merubah semua ke uppercase, misal
+salam = "bro"
+print("kabarnya baik kah?",salam)
+salam = salam.upper()
+print("upper =","kabarnya baik kah?",salam)#mau copy code = alt+shift, kalau pindahin tahan alt plus arrow
 
-# 2. menghitung panjang dari string (len=length)
-panjang = len(nama_lengkap)
-print("panjang dari"+nama_lengkap+"="+str(panjang))#ini untuk mngukur panjang dri string dengan menggunakan len(variabel) dngn value variabel yang ingin kita hitung.
-#kenapa itu ditambah str, krena kalau tidak itu akan jadi masalah karena itu angka, jadi harus diubah terlebih dahulu tipe nya menjadi string
+# merubah semua ke lowercase
+aku = "Hai, APa KABar"
+print(aku,"amel")
+aku = aku.lower()
+print("lower =",aku,"amel")
 
-# 3. operator untuk string
-#mengecek apakah ada komponen character atau string di string
-#misal kita buat d adalah sbuah d string
+# 2. pengecekan isX method
+#contoh untuk pengecekan lowercase
+salam = "sis"#nah skrg kita mau ngecek apakah sis ini lower smua
+apakah_lower = salam.islower()#nah dngn mnggunakan islower akan mngecek apakah dia lower, dan hasilnya adalah boolean
+print(salam,"apakah dia lower ?",apakah_lower)
+apakah_upper = salam.isupper()
+print(salam,"apakah dia lower ?",apakah_upper)#kalau misalnya terjadi errror dan gk mau dia memunculkan bool nya, maka kita bisa mengubah tipe data dari apakah mnjdi str
 
-d = "D"
-status = d in nama_lengkap#nah ini untuk mengecek apakah d ada di komponen nama_lengkap
-print("string "+d+" ada di "+nama_lengkap +" "+ str(status))#ini akan menjadi false karena variabel d yang kita miliki bernilai d lowercase, sdngkan yang di nama_lengkap itu uppercase, nah coba kita ganti jadi uppercase
+#isalpha() <--- untuk mengecek smuanya huruf
+#isalnum() <--- untuk mengecek smuanya huruf dan angka
+#isdecimal() <--- untuk mengecek smuanya ialah angka
+#isspace() <--- untuk mengecek isinya adalah kolom kosong, sperti spasi, tab, newline, \n
+#istitle() <--- untuk mengecek smua kata dimulai dengan huruf besar
 
-d = "d"
-status = d in nama_lengkap#nah ini untuk mengecek apakah d ada di komponen nama_lengkap
-print("string "+d+" ada di "+nama_lengkap +" "+ str(status))
+judul = "The Walking Death"
+apakah_title = judul.istitle()
+print(judul,"judulnya smua huruf brawal dari huruf besar ?",apakah_title)#nah karena benar jadi akan di print (true)
 
-#ada satu lagi cara nya untuk mengecek yaitu dngn menggunakan (not in) tidak ada
+#ngecek komponen startswith() endwith() <--- ini keren
+cek_start = "Hai guru".startswith("hai guru")#nah ini ialah untuk mengecek apakah kalimat cek_start itu dimulai dengan kalimat yang sama dngn value dari STARTSWITH, jadi disini kita tidak usah buat variabel lain dlu, karena bisa langsung taruh (.startswith) diblakangny
 
-d = "D"
-status = d not in nama_lengkap#nah ini untuk mengecek apakah d ada di komponen nama_lengkap
-print("string "+d+"tidak ada di "+nama_lengkap +" "+ str(status))#ini akan bernilai false, krena variabel d itu ada di dalam nama_lengkap
+print("start = ",cek_start)#ini akan menjadi FALSE, karena "hai guru" yang benar berawalan dari huruf H kapital "Hai guru"
 
-# 4. mengulang string
-print("wk"*10)
-print(10*"wk")
+cek_end = "Hai guru".endswith("guru")
+print("end = ",cek_end)
 
-# 5.indexing (mengambil data dari string)
-#cntoh
-print("index ke-0 = "+nama_lengkap[0])#nah karena ucup D'Fame itu 11, dan index slalu dimulai dari 0, berarti e sbagai index trakhir akan terhitung sbagai index 10
-print("index ke-1 = "+nama_lengkap[1])
-print("index ke-10 = "+nama_lengkap[10])
-print("index ke-4 = "+nama_lengkap[4])
-#gimana kalau index nya mines?
-print("index ke-(-1) = "+nama_lengkap[-1])#nah ini e yg akan muncul, nah kesimpulan nya kolom mines akan mengambil nilai dari belakang
-print("index ke-(-2) = "+nama_lengkap[-2])#nah jadi intinya kalau mulai dri belkang, itu mulai dari nilai mines
+# 3. penggabunggan komponen join() split(), jelas sesuai nama si join akan menggabunggkan dan split akan memisahkan, ini termasuk salah satu komponen list (kumpulna data)
 
-#nah skrang gimana kita mau ambil range?
-print("index ke-(0-3) = "+nama_lengkap[0:3])#nah jadi aturan nya kalau kita hitung mau ambil 0-3, kita tidak bisa membuat value nya itu [0-3]nanti akan error, tpi kita harus membuat value nya[0:3]titik dua yang artinya (sampai).
-#nah tapi kalau gini dia hanya akan print "ucu" atau bisa diblg 0-2 doang, knpa? karena python emg begitu jadi jikalau kita ingin sampai index tiga, maka kalian harus membuat dia menjadi 0:4 agar p nya ikut terbaca
-print("index ke-(0-3) = "+nama_lengkap[0:4])#nah begini dia akan ngeprint index 0-3
-#kita juga bisa mengambil pakai jeda
-print("index ke-[0,2,4,6,8,10]:"+nama_lengkap[0:10:2])
+pisah = ["aku","sayang","kamu"] #nah untuk list dia pakai kurung siku ( [] )
+print(pisah)#nah skrang kita ingin gabungkan smua
 
-# 6. item paling kecil (min)
-print("paling kecil :"+min(nama_lengkap))#nah nanti akan keluar paling kecil adalah (gadak) atau spasi
+gabungan = ",".join(pisah)#nah ini untuk menggabungkan, value nya ialah hal yang ingin digabungkan, nah sedangkan str koma disini adalah hal yang kita pakai ketika menggabungkan, jadi ini akan menjadi seperti aku,sayang,kamu
+print(gabungan)
 
-# 7.item paling besar (max)
-print("paling besar :"+max(nama_lengkap))#nanti akan mengeprint (u)sesuai abjad karena u yang paling besar, maksudnya ialah kita mengambil ascii_code contoh
+gabungan = " ".join(pisah)#nah dngan ini kita akan menggabungkan keduanya dngan spasi
+print(gabungan)
 
-ascii_code = ord(" ")
-print("ascii code untuk spasi adalah "+str(ascii_code))
-data = 117
-print("char untuk ascii 117 adalah "+ chr(data))
-#nah disini u=117 dan spasi =32, maka dari itu ketika kita ngeprint yang paling besar akan keluar u dan yang paling kecil akan keluar spasi
+gabungan = " ehm ".join(pisah)#jadi yang digunakan bukan hanya koma dll, tapi juga bisa kalimat 
+print(gabungan)
 
-# 8. operator dalam bentuk method
-data = "otong surotong markontong"
-jumlah = data.count("u")#nah ini count salah satu bentuk method, dia menempel ke si data, disini kita bisa itung, contoh kita ingin itung jumlah U
-print("jumlah u pada data = "+data+" = "+str(jumlah))
+gabungan = "akuehmsayangehmkamu"
+print(gabungan.split("ehm"))#nah ini akan membuat kita memisahkan nilai dari gabungan dengan ehm, artinya kita menghilangkan smua ehm didalamnya dan akan membuat dia menjadi sbuah list lagi. jadi ini kebalikan dari join
+
+# 4. alokasi karakter rjust(), ljust(), center()
+#rjust() atau right justify, rata kanan
+kanan = "kanan".rjust(10)
+print("'"+kanan+"'")#nah ini dia akan mengambil space 10 dan rata kanan tulisan nya, jadi karena kanan ini 5 karakter maka space ke kirinya akan bersisa 5
+
+kiri = "kiri".ljust(7)
+print("'"+kiri+"'")#nah ini dia akan mengambil space 7 dan rata kiri tulisan nya, jadi karena kiri ini 4 karakter jadi space ke kanan nya akan bersisa 3
+
+tengah = "tengah".center(10)
+print("'"+tengah+"'")#nah ini dia akan mengambil space 10 dan di tengah jadi kanan karena tengah itu 6 karakter maka kanan kiri akan bersisa 2 2 jadi 4
+
+tengah = "tengah".center(18,"=")#nah tambahan (str =)disini ialah untuk mengubah jaraknya itu tidak ditandai dengan spasi, jadi jaraknya ditandai dengn value str yg kita masukan, contoh disini kan value nya =
+print("'"+tengah+"'")
+
+tengah = "tengah".center(18,"*")#ini kalian mau pakai tanda yang aneh juga bisa
+print("'"+tengah+"'")
+
+#kebalikan nya -> strip()
+tengah = tengah.strip("*")
+print("'"+tengah+"'")#nah jadi strip itu fungsinya untuk menghilangkan nilai dari value nya, cnth disini kita ingin menghilangan (*), maka kita gunakan .strip("*")
+
+#NAH SEKIAN, JADI MASIH BANYAK LAGI METHOD YG LAIN DAN PENJELASAN NYA APA SAJA, CARINYA BISA DI W3SCHOOLS DAN LAIN LAIN
