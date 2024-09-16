@@ -1,83 +1,78 @@
-#belajar python part16
-#operasi dan manipulasi string part2
+#belajar python part17
+#FORMAT STRING
 
-#beberapa operator method
+#contoh generic
+#STRING
+nama = "marlene"
+#untuk membuat lebih mudah kita bisa membuat formating
+format_str = f"hello {nama}"#kita panggil value dngn menggunakan kurung kurawal {}
 
-# 1. merubah case dari string
-#merubah semua ke uppercase, misal
-salam = "bro"
-print("kabarnya baik kah?",salam)
-salam = salam.upper()
-print("upper =","kabarnya baik kah?",salam)#mau copy code = alt+shift, kalau pindahin tahan alt plus arrow
+print(format_str)
 
-# merubah semua ke lowercase
-aku = "Hai, APa KABar"
-print(aku,"amel")
-aku = aku.lower()
-print("lower =",aku,"amel")
+#kita juga bisa nmpilin BOOLEAN
+boolean = False
+format_str = f"boolean = {boolean}"
+print(format_str)
 
-# 2. pengecekan isX method
-#contoh untuk pengecekan lowercase
-salam = "sis"#nah skrg kita mau ngecek apakah sis ini lower smua
-apakah_lower = salam.islower()#nah dngn mnggunakan islower akan mngecek apakah dia lower, dan hasilnya adalah boolean
-print(salam,"apakah dia lower ?",apakah_lower)
-apakah_upper = salam.isupper()
-print(salam,"apakah dia lower ?",apakah_upper)#kalau misalnya terjadi errror dan gk mau dia memunculkan bool nya, maka kita bisa mengubah tipe data dari apakah mnjdi str
+#angka
+angka = 2005.5
+format_str = "angka = " + str(angka)
+print(format_str)#ini akan error karena tipe datanya tidak sesuai, kita harus menambahkan tipe data str. maknya lebih mudah memeakai formating
 
-#isalpha() <--- untuk mengecek smuanya huruf
-#isalnum() <--- untuk mengecek smuanya huruf dan angka
-#isdecimal() <--- untuk mengecek smuanya ialah angka
-#isspace() <--- untuk mengecek isinya adalah kolom kosong, sperti spasi, tab, newline, \n
-#istitle() <--- untuk mengecek smua kata dimulai dengan huruf besar
+format_str = f"angka = {angka}"
+print(format_str)#nah lebih mudah kan begini
 
-judul = "The Walking Death"
-apakah_title = judul.istitle()
-print(judul,"judulnya smua huruf brawal dari huruf besar ?",apakah_title)#nah karena benar jadi akan di print (true)
+#bilangan bulatnya saja
+angka = 15
+format_str = f"angka bil bulat = {angka:d}"# :d disini artinya kita ingin menampilkan si angka ini ialah bilangan bulat
+print(format_str)#jika contoh kita membuat angka 15.5 ini akan error karena si tipe nya adalah float bukan lagi integer
 
-#ngecek komponen startswith() endwith() <--- ini keren
-cek_start = "Hai guru".startswith("hai guru")#nah ini ialah untuk mengecek apakah kalimat cek_start itu dimulai dengan kalimat yang sama dngn value dari STARTSWITH, jadi disini kita tidak usah buat variabel lain dlu, karena bisa langsung taruh (.startswith) diblakangny
+#bilangan ribuan
+angka = 1000
+format_str = f"ribuan = {angka:,}"
+print(format_str)#nah biasanya angka ini kan ada koma diblkang angka nya (disini contoh 2) maka kita tinggal masukin (titik dua koma di value angka yang di format)
 
-print("start = ",cek_start)#ini akan menjadi FALSE, karena "hai guru" yang benar berawalan dari huruf H kapital "Hai guru"
+#bilangan desimal
+angka = 2005.54321
+format_str = f"desimal = {angka:.2f}"#nah dngn bgini kita akan mngambil dua angka di blkang koma, 2 berarti bnyak angka yang diambil, nah f adalah tipe data float
+print(format_str)#nah kalau begini kita akan menampilkan smuanya saat di print, tapi bisa gak kita ingin nampilin contoh nya dua angka doang diblkang koma? bisa, dngn cara menggunakan titik dua titik yang berarti itu akan menampilkan anka diblkang koma
 
-cek_end = "Hai guru".endswith("guru")
-print("end = ",cek_end)
+#menampilkan leading zero
+angka = 2005.54321
+format_str = f"desimal = {angka:010.2f}"#nah contoh karena kan ini dua angka yang diambil jadi, sharusnya jumlah angka dari depan smpai dua angka diblkang koma ialah 7 (koma nya juga diitung), lalu kita tambahin disini 7 yang brarti ialah jumlah angka, nah hasilnya akan tetap sama
 
-# 3. penggabunggan komponen join() split(), jelas sesuai nama si join akan menggabunggkan dan split akan memisahkan, ini termasuk salah satu komponen list (kumpulna data)
+#tapi bagaimana jika kita membuat angka yang akan ditampilkan berbeda dari jumlah angka dari depan hingga blkang koma yang dipanggil, cntoh disini kita akan membuat 10, maka angka nya akan bergeser hingga membuat sebuah tempat ksoong yang skiranya bisa diisi sisa angka dari jumlah angka yang dipanggil, lalu gimana kalau ingin mengisi daerah kosong tersebut? kita tinggal menulis angka lagi didepan banyak nya jumlah angka, contoh kita ingin mengisi nya dngn 0
+print(format_str)
 
-pisah = ["aku","sayang","kamu"] #nah untuk list dia pakai kurung siku ( [] )
-print(pisah)#nah skrang kita ingin gabungkan smua
+#menampilkan tanda + atau -
+angka_minus = -10
+angka_plus = 10.124
+format_minus = f"minus = {angka_minus}"
+format_plus = f"plus = {angka_plus:+.2f}"#nah cara agar kita dapat mengeluarkan tanda nya, dngn cara menambahkan :+d yang berarti kita akan menampilkan tandanya 
 
-gabungan = ",".join(pisah)#nah ini untuk menggabungkan, value nya ialah hal yang ingin digabungkan, nah sedangkan str koma disini adalah hal yang kita pakai ketika menggabungkan, jadi ini akan menjadi seperti aku,sayang,kamu
-print(gabungan)
+print(format_minus)
+print(format_plus) 
 
-gabungan = " ".join(pisah)#nah dngan ini kita akan menggabungkan keduanya dngan spasi
-print(gabungan)
+#memformat persen
+persentase = 0.045
+format_persen = f"persen = {persentase:.0%}"#nah cara agar menjadi persen ialah dengn memberikan titik dua lalu %, tapi apa yg akan terjadi ialah ada bnyak 0, nah cara agar tidak bnyak 0 adalah dngn mnggunakan titik dan ada brapa bnyak 0, disini kita contoh dngn gdk angka 0 sama sekali maka akan mnjadi ():.0%)
+print(format_persen)
 
-gabungan = " ehm ".join(pisah)#jadi yang digunakan bukan hanya koma dll, tapi juga bisa kalimat 
-print(gabungan)
+#info tambahan, didalam kurung kurawal kita dapat mlakukan operasi
+#melakukan operasi aritmetika didalam kurung kurawal (placeholder)
+#contoh
+harga = 10000
+jumlah = 5
 
-gabungan = "akuehmsayangehmkamu"
-print(gabungan.split("ehm"))#nah ini akan membuat kita memisahkan nilai dari gabungan dengan ehm, artinya kita menghilangkan smua ehm didalamnya dan akan membuat dia menjadi sbuah list lagi. jadi ini kebalikan dari join
+format_string = f"harga total = Rp.{harga*jumlah:,}"
+print("harga smuanya menjadi =",format_string)
 
-# 4. alokasi karakter rjust(), ljust(), center()
-#rjust() atau right justify, rata kanan
-kanan = "kanan".rjust(10)
-print("'"+kanan+"'")#nah ini dia akan mengambil space 10 dan rata kanan tulisan nya, jadi karena kanan ini 5 karakter maka space ke kirinya akan bersisa 5
+#format angka lain (binary, octal, hexadecimal)
 
-kiri = "kiri".ljust(7)
-print("'"+kiri+"'")#nah ini dia akan mengambil space 7 dan rata kiri tulisan nya, jadi karena kiri ini 4 karakter jadi space ke kanan nya akan bersisa 3
-
-tengah = "tengah".center(10)
-print("'"+tengah+"'")#nah ini dia akan mengambil space 10 dan di tengah jadi kanan karena tengah itu 6 karakter maka kanan kiri akan bersisa 2 2 jadi 4
-
-tengah = "tengah".center(18,"=")#nah tambahan (str =)disini ialah untuk mengubah jaraknya itu tidak ditandai dengan spasi, jadi jaraknya ditandai dengn value str yg kita masukan, contoh disini kan value nya =
-print("'"+tengah+"'")
-
-tengah = "tengah".center(18,"*")#ini kalian mau pakai tanda yang aneh juga bisa
-print("'"+tengah+"'")
-
-#kebalikan nya -> strip()
-tengah = tengah.strip("*")
-print("'"+tengah+"'")#nah jadi strip itu fungsinya untuk menghilangkan nilai dari value nya, cnth disini kita ingin menghilangan (*), maka kita gunakan .strip("*")
-
-#NAH SEKIAN, JADI MASIH BANYAK LAGI METHOD YG LAIN DAN PENJELASAN NYA APA SAJA, CARINYA BISA DI W3SCHOOLS DAN LAIN LAIN
+angka = 255
+format_binary = f"binary = {bin(angka)}"
+format_octal =  f"octal = {oct(angka)}"
+format_hexadecimal =  f"hex = {hex(angka)}"
+print(format_binary)
+print(format_octal)
+print(format_hexadecimal)
