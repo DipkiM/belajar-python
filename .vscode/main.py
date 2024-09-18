@@ -1,45 +1,33 @@
-#belajar python part18
-#STRING WIDTH AND MULTILINE
+#belajar python part19
+#LATIHAN DATE AND TIME
 
-#contoh kita punya DATA
+#contoh ingin membuat kapan kita lahir, pertama tengok terlebih dahulu ke library python tentang date and time 
 
-data_nama = "Ucup Surucup"
-data_umur = 17
-data_tinggi = 160
-data_nomor_sepatu = 40
+import datetime as dt
+#jadi disini artinya sih datetime tadi akan kita import sbagai dt
 
-#string
-data_string = f"nama = {data_nama}, umur = {data_umur}, tinggi = {data_tinggi}, ukuran sepatu = {data_nomor_sepatu}"
-print(5*"="+"DATA STRING"+"="*5)
-print(data_string)
+# contoh
+hari_ini = dt.date.today()#nah dengan bgini kita akan mengprint tanggal hari ini, dngn menggunakan datetime dan .date .today
+print(hari_ini)
 
-#string multiline (dngn menggunakan enter, newline, \n)
-data_string = f" nama = {data_nama}\n umur = {data_umur}\n tinggi = {data_tinggi}\n ukuran sepatu = {data_nomor_sepatu}"
-print("\n"+5*"="+"DATA STRING"+"="*5)
-print(data_string)
+# cara manual
+tanggal = dt.date(2024,9,18)#ini akan ngeprint secara manual
+print(tanggal)  
+print(f"hari ini adalah hari = {hari_ini:%A}")#nah dngn ini kita bisa memanggil hari dengan mnggunakan "format" (%A) ialah untuk mmgil hari
 
-#string multiline (kutip triplets) caranya adalah dngn mnggunakan kutip tiga biji
-data_string = f"""
-nama = {data_nama}
-umur = {data_umur}
-tinggi = {data_tinggi}
-ukuran sepatu = {data_nomor_sepatu}
-"""
-#dia akan mengeprint apa pun yang ada dalam kutip sesuai dngn posisi nya jadi misal umur berada disebelah nama, dia akan ngeprint sperti itu
-print("\n"+5*"="+"DATA STRING"+"="*5)
-print(data_string)
+# NAH SKRNG KITA AKAN MENDETEKSI HARI LAHIR
+print("silahkan masukan\n tanggal\n bulan dan\n tahun lahir anda\n")
+bulan   = int(input("bulan \t\t:"))
+tanggal = int(input("tanggal \t:"))
+tahun   = int(input("tahun \t\t:"))
 
-#mengatur lebar dngn cara menggunakan :>(nilai nya, jadi jarak nya mau brapa)cntoh
-data_nama = "Ucup"
-data_string = f"""
-nama   = {data_nama}
-nama   = {data_nama:>5}
-umur   = {data_umur:>5}
-tinggi = {data_tinggi:>5}
-ukuran = {data_nomor_sepatu:>5}
-"""
-# maka data_nama yang diatur akan brada di posisi ke 7, yah kayak mengatur jarak lebar dll nya
-print("\n"+5*"="+"DATA STRING"+"="*5)
-print(data_string)
+tanggal_lahir = dt.date(tahun,bulan,tanggal)
+print("tanggal lahir anda ialah =",tanggal_lahir)
 
-#NAH UNTUK NGEPRINT INI ITU BANYAK CARANY, NNTI BISA CARI SENDIRI DI WEB W3SCHOOLS ATAUPUN YANG LAIN KRENA BNYAK KONVENSI2NYA 
+hari_ini = dt.date.today()
+print(f"hari ini tanggal = {hari_ini}")
+umur_hari = hari_ini - tanggal_lahir
+umur_tahun = umur_hari.days // 365 # nah untuk penggunaan .days disini itu berarti kita ingin dia itu hari
+umur_bulan_sisa = (umur_hari.days % 365)//30 #nah 30 disini itu ialah rata rata banyak hari perbulan nya 
+print(f"hari lahir anda ialah = {tanggal_lahir:%A}")
+print(f"umur anda ialah = {umur_tahun} tahun, {umur_bulan_sisa} bulan")
