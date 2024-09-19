@@ -1,33 +1,41 @@
-#belajar python part19
-#LATIHAN DATE AND TIME
+#belajar python part20
+#if dan else statement
 
-#contoh ingin membuat kapan kita lahir, pertama tengok terlebih dahulu ke library python tentang date and time 
+#1. if ny
+#2. kondisi nya
+#3. aksi nya
+nama = input("masukan nama kamu = ")
 
-import datetime as dt
-#jadi disini artinya sih datetime tadi akan kita import sbagai dt
+#RUMUS IF
+#if kondisi: aksi
+#program selanjutnya
 
-# contoh
-hari_ini = dt.date.today()#nah dengan bgini kita akan mengprint tanggal hari ini, dngn menggunakan datetime dan .date .today
-print(hari_ini)
+#contohnya (1.PROGRAM IF INLINE)
+if nama=="ucup": print("kamu ganteng abiezz")#nah disini kondisinya ialah (nama == ucup), akan melakukan aksi apa? print("kamu ganteng abiezzz")
+print(f"Terima kasih {nama}")
 
-# cara manual
-tanggal = dt.date(2024,9,18)#ini akan ngeprint secara manual
-print(tanggal)  
-print(f"hari ini adalah hari = {hari_ini:%A}")#nah dngn ini kita bisa memanggil hari dengan mnggunakan "format" (%A) ialah untuk mmgil hari
+# #CONTH
+# if nama == "ucup":
+#     print("kamu ganteng")
+# else:
+#     print(f"terima kasih {nama}")
 
-# NAH SKRNG KITA AKAN MENDETEKSI HARI LAHIR
-print("silahkan masukan\n tanggal\n bulan dan\n tahun lahir anda\n")
-bulan   = int(input("bulan \t\t:"))
-tanggal = int(input("tanggal \t:"))
-tahun   = int(input("tahun \t\t:"))
+#contohnya (2.PROGRAM IF DNGN INDENTATION)
+if nama == "ucup":
+    print("kamu ganteng abiezz")
+    print("kamu juga keren banget")#nah ini dua adalah contoh indentation, atau apapun itu yang menjorok kedalam stelah sebuah kondisi, dimana berarti ini akan dijalankan ketika kondisi nya terpenuhi.
+print(f"Terima kasih {nama}")#nah jika ingin keluar dari indentation maka kamu harus kembali ke posisi awal (gunakan backspace supaya tidak menjorok kedalam if, atau kamu harus sejajar dngn kondisi nya)
 
-tanggal_lahir = dt.date(tahun,bulan,tanggal)
-print("tanggal lahir anda ialah =",tanggal_lahir)
+#NAH TADI KAN CUMAN AKSI KETIKA DIA TRUE ("ATAU NILAI NYA BENER", gmana kalau salah, apakah bisa menambhkan aksi? bisa dengn (ELSE STATEMENT))
 
-hari_ini = dt.date.today()
-print(f"hari ini tanggal = {hari_ini}")
-umur_hari = hari_ini - tanggal_lahir
-umur_tahun = umur_hari.days // 365 # nah untuk penggunaan .days disini itu berarti kita ingin dia itu hari
-umur_bulan_sisa = (umur_hari.days % 365)//30 #nah 30 disini itu ialah rata rata banyak hari perbulan nya 
-print(f"hari lahir anda ialah = {tanggal_lahir:%A}")
-print(f"umur anda ialah = {umur_tahun} tahun, {umur_bulan_sisa} bulan")
+nama = input("masukan nama kamu = ")
+
+#contohnya (3. ELSE STATEMENT)
+if nama == "otong":#jika ini benar, maka lakukan line33
+    print("hai otoooong, si keren!!!")
+else:#sejajar dngn kondisi sblmnya, nah jika line 32 tidak sesuai maka lakukan line 35
+    print("ah kamu bukan otong, kamu gak keren")
+
+print("akhir program")
+
+
