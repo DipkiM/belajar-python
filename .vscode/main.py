@@ -1,41 +1,27 @@
 #belajar python part20
-#if dan else statement
+#ELIF STATEMENT
 
-#1. if ny
-#2. kondisi nya
-#3. aksi nya
-nama = input("masukan nama kamu = ")
-
-#RUMUS IF
-#if kondisi: aksi
-#program selanjutnya
-
-#contohnya (1.PROGRAM IF INLINE)
-if nama=="ucup": print("kamu ganteng abiezz")#nah disini kondisinya ialah (nama == ucup), akan melakukan aksi apa? print("kamu ganteng abiezzz")
-print(f"Terima kasih {nama}")
-
-# #CONTH
-# if nama == "ucup":
-#     print("kamu ganteng")
+nama = input("nama anda siapa? ")
+# ini if else
+# if kondisi:
+#     aksi:
 # else:
-#     print(f"terima kasih {nama}")
+#     aksi false:
 
-#contohnya (2.PROGRAM IF DNGN INDENTATION)
-if nama == "ucup":
-    print("kamu ganteng abiezz")
-    print("kamu juga keren banget")#nah ini dua adalah contoh indentation, atau apapun itu yang menjorok kedalam stelah sebuah kondisi, dimana berarti ini akan dijalankan ketika kondisi nya terpenuhi.
-print(f"Terima kasih {nama}")#nah jika ingin keluar dari indentation maka kamu harus kembali ke posisi awal (gunakan backspace supaya tidak menjorok kedalam if, atau kamu harus sejajar dngn kondisi nya)
+# ini elif
+# if kondisi:
+#     aksi true
+# elif kondisi:
+#     aksi true
+# elif kondisi:
+#     aksi true. NAH JADI KITA BISA PAKAI ELIF INI SBNYAK APAPUN YANG KITA MAU
 
-#NAH TADI KAN CUMAN AKSI KETIKA DIA TRUE ("ATAU NILAI NYA BENER", gmana kalau salah, apakah bisa menambhkan aksi? bisa dengn (ELSE STATEMENT))
+if nama == "ucup": #ini kondisi satu
+    print("hai ganteng") #aksi true satu
+elif nama == "otong": #ini kondisi satu
+    print("hai si kece bingits") #aksi true dua
+else:
+    print("siapa lu, gua gak kenal")#nah ini akan menampilkan ketika kita menginput nama selain otong dan ucup
+print("ini adalah hasil akhir dari program")
 
-nama = input("masukan nama kamu = ")
-
-#contohnya (3. ELSE STATEMENT)
-if nama == "otong":#jika ini benar, maka lakukan line33
-    print("hai otoooong, si keren!!!")
-else:#sejajar dngn kondisi sblmnya, nah jika line 32 tidak sesuai maka lakukan line 35
-    print("ah kamu bukan otong, kamu gak keren")
-
-print("akhir program")
-
-
+# NAH ITU DIA KONDISI ELIF, TAPI SI ELIF INI BISA DITAMBAH SBNYAK APAPUN
