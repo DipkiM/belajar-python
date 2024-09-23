@@ -1,27 +1,32 @@
-#belajar python part20
-#ELIF STATEMENT
+#belajar python part21
+#membuat kalkulator sederhana (LATIHAN)
 
-nama = input("nama anda siapa? ")
-# ini if else
-# if kondisi:
-#     aksi:
-# else:
-#     aksi false:
+#pertama kita ambil data user, yaitu angka pertama, angka kedua dan operasinya
+#kedua kita ambil cabang nya, misal dia milih operasi satu trus ya dia akan menjalankan operasi satu
 
-# ini elif
-# if kondisi:
-#     aksi true
-# elif kondisi:
-#     aksi true
-# elif kondisi:
-#     aksi true. NAH JADI KITA BISA PAKAI ELIF INI SBNYAK APAPUN YANG KITA MAU
+print(20*"=")
+print("MEMBUAT KALKULATOR SEDERHANA")
+print(20*"="+"\n")
 
-if nama == "ucup": #ini kondisi satu
-    print("hai ganteng") #aksi true satu
-elif nama == "otong": #ini kondisi satu
-    print("hai si kece bingits") #aksi true dua
+angka1 = float(input("masukan angka pertama anda\n"))#knpa kita pakai float? karena ini bisa membuat kita menggunakan angka yang memiliki koma koma an, kalau int nnti dia error
+angka2 = float(input("masukan angka kedua anda\n"))
+operasi = input("masukan operasi anda (+,-,*,/,**)\n")
+
+#PERCABANGAN NYA
+if operasi == "+":
+    hasil=(angka1 + angka2)
+    print(f"nilai dari perhitungan anda ialah = {hasil}")
+elif operasi == "-":
+    hasil=(angka1 - angka2)
+    print(f"nilai dari perhitungan anda ialah = {hasil}")
+elif operasi == "*":
+    hasil = (angka1 * angka2)
+    print(f"nilai dari perhitungan anda ialah = {hasil}")
+elif operasi == "/":
+    hasil = (angka1 / angka2)
+    print(f"nilai dari perhitungan anda ialah = {hasil}")
+elif operasi == "**":
+    hasil = (angka1 ** angka2)
+    print(f"nilai dari perhitungan anda ialah = {hasil}")
 else:
-    print("siapa lu, gua gak kenal")#nah ini akan menampilkan ketika kita menginput nama selain otong dan ucup
-print("ini adalah hasil akhir dari program")
-
-# NAH ITU DIA KONDISI ELIF, TAPI SI ELIF INI BISA DITAMBAH SBNYAK APAPUN
+    print("masukan operasi yang jelas")
