@@ -1,19 +1,30 @@
-#belajar python part24
-#while loop (perulangan)
+#belajar python part25
+#continue pass
 
-#while kondisi: kondisi disini itu menggunakan boolean (true or false)
-    #aksi a
-    #aksi b
-#akhir program
+#PASS fungsinya sbagai dummy (tidak akan dieksekusi)
 
-i = 10
-print(f"nilai i sekarang --> {i}")
+#cntoh
+angka = 0
+while angka < 5:
+    angka += 1
+    if angka == 3:
+        pass#ini tidak akan dieksekusi (hanya lewat aja)
+        # print("whatsup brow")
+    print(angka)
 
-while i > 5:
-    i -=1# nah dngn ini dia akan berhenti ktika angka ny sudah lebih kecil 5
-    print(f"nilai i sekarang --> {i}")
-    print("saya ganteng banget")
+#CONTINUE
 
-print("iya tauuu kokkk :(")#nah disini dia akan mngulang trus menerus, knapa? karena i =10 dan kondisi nya memenuhi (True) jadi dia akan ngulang trus disitu (di print trus)
+angka = 0
+print(f"angka sekarang adalah {angka}")
 
+while angka < 5:
+    angka+=1
+    print(f"angka sekarang ialah {angka}")#ini aksi 1
+#lalu continue fungsiny gmn?
+#misal kita ingin buat kondisi saat dia sedang ngeloop, jadi cntoh saat selesai aksi 1 trus dikasih kondisi yng akan jadi pengecek, ketika dia blm memenuhi kondisi maka dia akan nge loop lagi
+    if angka == 3:
+        print("niceee!!!")
+        continue #ini akan membuat  loop mlompat ke step slnjutny, jadi setiap ada di loop kalok ketemu continue dia akan balik lagi keatas, jadi intinya smua looping yang ada di bawah nya di skip dan loncat ke step slanjutnya
+    print("whassupp")#ini aksi 2
+print("finish")
 
