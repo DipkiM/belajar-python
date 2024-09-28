@@ -1,29 +1,73 @@
-#belajar python part26
-#break
-print("=====CONTOH FUNGSI BREAK KEREN=====")
-data_int = int(input("hitung sampai = "))
-angka = 0
+#belajar python part27
+#latihan perulangan membuat segitiga
+
+sisi = 10
+count = 1
+#1.Menggunakan FOR
+print("awal dari for")
+for i in range(sisi):
+    print("*"*count)
+    count+=1#ini logika nya jadi kan bintang * dngn count itu karena pertama kali count nya satu maka bintang kali satu, nah stelah di print kan count nya ditambah 1 ke ata tuh nahh jadi bgitu trus.
+print("akhir dari for")
+print("\n")
+
+#2.Menggunakan WHILE
+print("awal dari while")
+count=1
 while True:
-    angka +=1
-    print(f"count = {angka}")
-        
-    if angka == data_int:
-        print("niceee")
-        break#jadi yang 4 dan 5 nya gk di print dia langsung ke end (cukupppp)
+    print("*"*count)
+    count+=1
+    if count > sisi:
+        break
+print("akhir dari while")
 
-        #NAH JADI DENGAN INI KITA BISA MENGEPRINT SBERAPA BNYAK MAU NYA
-    print("wassuppp bebeh!!!")
+#3.hanya ganjil saja
+print("awal dari while")
+count=1
+while True:
+    if (count%2):
+        #print jika ganjil
+        print("*"*count)
+        count+=1
+    else:
+        #akan kembali keatas jika ganjil
+        count+=1
+        continue
+    if count > sisi:
+        #akan break ketika melebihi sisi
+        break
+print("akhir dari while")
+print('\n')
 
-print("cukupppp finishh!!")
 
-print("=====CONTOH SEDERHANA=====")
-angka = 0
-while angka <5:
-    angka +=1
-    print(f"angka sekarang ialah {angka}")
-        
-    if angka == 3:
-        print("niceee")
-        break #jadi dia langsung ke end gk lanjut ke 4 dan 5
-    print("wassuppp bebeh!!!")
-print("cukupp")
+print("awal dari while")
+count=1
+spasi = int(sisi/2)
+while True:
+    if (count%2):
+        #print jika ganjil
+        print(" "*spasi,"+"*count)
+        spasi -=1
+        count+=1
+    else:
+        #akan kembali keatas jika ganjil
+        count+=1
+        continue
+    if count > sisi:
+        #akan break ketika melebihi sisi
+        break
+    
+print("akhir dari while")
+
+
+
+
+for i in range(5, 0, -1):
+    print(" "*(5-i), end='')
+    for x in range(i):
+        print("+ ", end='')
+    print()
+
+
+
+
