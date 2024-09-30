@@ -1,73 +1,48 @@
-#belajar python part27
-#latihan perulangan membuat segitiga
+#belajar python part28
+#---LIST---
 
-sisi = 10
-count = 1
-#1.Menggunakan FOR
-print("awal dari for")
-for i in range(sisi):
-    print("*"*count)
-    count+=1#ini logika nya jadi kan bintang * dngn count itu karena pertama kali count nya satu maka bintang kali satu, nah stelah di print kan count nya ditambah 1 ke ata tuh nahh jadi bgitu trus.
-print("akhir dari for")
-print("\n")
+# angka = 1
+# angka = 2
+# angka = 3
+# nah bisa gk kita menyatukan ini smua? bisa dengan mengumpulkan data nya dngn sebuah LIST
 
-#2.Menggunakan WHILE
-print("awal dari while")
-count=1
-while True:
-    print("*"*count)
-    count+=1
-    if count > sisi:
-        break
-print("akhir dari while")
+#kumpulan data NUMBERS
+data_angka = [1,2,3]
+print(data_angka)
 
-#3.hanya ganjil saja
-print("awal dari while")
-count=1
-while True:
-    if (count%2):
-        #print jika ganjil
-        print("*"*count)
-        count+=1
-    else:
-        #akan kembali keatas jika ganjil
-        count+=1
-        continue
-    if count > sisi:
-        #akan break ketika melebihi sisi
-        break
-print("akhir dari while")
-print('\n')
+#Kumpulan data STRINGS
+data_string = ["ucup","otong","oda"]
+print(data_string)
 
+#Kumpulan data BOOLEAN
+data_boolean = [True,False,True,False]
+print(data_boolean)
 
-print("awal dari while")
-count=1
-spasi = int(sisi/2)
-while True:
-    if (count%2):
-        #print jika ganjil
-        print(" "*spasi,"+"*count)
-        spasi -=1
-        count+=1
-    else:
-        #akan kembali keatas jika ganjil
-        count+=1
-        continue
-    if count > sisi:
-        #akan break ketika melebihi sisi
-        break
-    
-print("akhir dari while")
+#kumpulan data campuran
+data_campuran = [1,'bala-bala',2,'cireng','ucup',True,'otong',False]
+print(data_campuran)
 
+#cara alternatif membuat list
+data_range = range(0,10,2)#range(start,stop,step)
+print(data_range)#ini tidak berbentuk didalam list
+data_list = list(data_range)
+print(data_list)
 
+#kita bisa membuat list dengan for loop
+#LIST COMPREHENSION
+list_pake_for = [i**2 for i in range(0,10)]#ini kita ingin membuar didalam list i untuk i didalam range(0-10)
+print(list_pake_for)
 
+#membuat list pake for pake if
+list_pake_for_pake_if = [i for i in range(0,10) if i!=5]
+#(!= ini itu tidak sama dengan) 
+print(list_pake_for_pake_if)
+list_pake_for_pake_if = [i**2 for i in range(0,10) if i !=5]
+print(list_pake_for_pake_if)
 
-for i in range(5, 0, -1):
-    print(" "*(5-i), end='')
-    for x in range(i):
-        print("+ ", end='')
-    print()
-
-
-
-
+#membuat list genap
+list_pake_for_pake_if = [i for i in range(0,10) if i%2 ==0]
+print(list_pake_for_pake_if)
+#membuat list ganjil
+list_pake_for_pake_if = [i for i in range(0,10) if i%2 !=0]
+print(list_pake_for_pake_if)
