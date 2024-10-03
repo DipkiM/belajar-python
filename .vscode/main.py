@@ -1,48 +1,47 @@
-#belajar python part28
-#---LIST---
+#belajar python part29
+#manipulasi list
 
-# angka = 1
-# angka = 2
-# angka = 3
-# nah bisa gk kita menyatukan ini smua? bisa dengan mengumpulkan data nya dngn sebuah LIST
+data = ['dudung','otong','sabar']#ini sebenernya ada index yang dimulai dari 0, dan kita juga bisa menggunakan index bernilai (-) jika kita mau mulai dari belakang, 0(-3), 1(-2), 2(-1)
 
-#kumpulan data NUMBERS
-data_angka = [1,2,3]
-print(data_angka)
+#1. cara mengambil data dari list tersebut
+data_0=data[0]#0 sama value atau indexnya
+print(f"data pertama = {data_0}")
 
-#Kumpulan data STRINGS
-data_string = ["ucup","otong","oda"]
-print(data_string)
+data_trakhir=data[-1]
+print(f"data terakhir = {data_trakhir}")
 
-#Kumpulan data BOOLEAN
-data_boolean = [True,False,True,False]
-print(data_boolean)
+#mengambil info jumlah data
+panjang_data = len(data)
+print(f"panjang data = {panjang_data}") 
 
-#kumpulan data campuran
-data_campuran = [1,'bala-bala',2,'cireng','ucup',True,'otong',False]
-print(data_campuran)
+#manipulasi data list
 
-#cara alternatif membuat list
-data_range = range(0,10,2)#range(start,stop,step)
-print(data_range)#ini tidak berbentuk didalam list
-data_list = list(data_range)
-print(data_list)
+#1.menambahkan item pada list sesuai posisi yang diinginkan
+print(f"data sebelum ditambah = \n{data}")
+data.insert(0,"ario")#nah pakai INSERT dimana (0 sebagai posisi yang ingin ditaruh, dan ario sebagai value yang ditambahkan)
+print(f'data setlah ditambhakan = \n{data}')
 
-#kita bisa membuat list dengan for loop
-#LIST COMPREHENSION
-list_pake_for = [i**2 for i in range(0,10)]#ini kita ingin membuar didalam list i untuk i didalam range(0-10)
-print(list_pake_for)
+#2.menambh di akhir list
+data.append("jajang")
+print(f'ini menambahkan data di akhir = {data}')
 
-#membuat list pake for pake if
-list_pake_for_pake_if = [i for i in range(0,10) if i!=5]
-#(!= ini itu tidak sama dengan) 
-print(list_pake_for_pake_if)
-list_pake_for_pake_if = [i**2 for i in range(0,10) if i !=5]
-print(list_pake_for_pake_if)
+#3. menambakan list dengan list
+data_baru = ['ujang','usep','dedeng']
+data.extend(data_baru)#jadi misal data baru mau ditambah ke data itu gunaakan EXTEND
+print(f'data gabungan = {data}')
 
-#membuat list genap
-list_pake_for_pake_if = [i for i in range(0,10) if i%2 ==0]
-print(list_pake_for_pake_if)
-#membuat list ganjil
-list_pake_for_pake_if = [i for i in range(0,10) if i%2 !=0]
-print(list_pake_for_pake_if)
+#4. merubah data
+#misal kita ingin ubah data ke dua , akan diganti dngn michael
+
+data[2]='michael'
+print(f'data rubah = {data}')#maka dari itu otong
+
+#meremove data
+data.remove('michael')
+print(f'ujang di remove = {data}')
+
+#meremove data paling blkang
+data.pop()#data pop ialah yang paling blkang
+print(f'data terakhir hilang = {data}')#nah skarang dedeng ilang, tapi misalkan kita taruh data.pop() kedalam variabel nnti yang ada ialah kita mengambil data terakhirny
+data_terakir=data.pop()
+print(data_terakir)#nah karena yang terakhir kali di run itu urutan nya usep, maka pas di print usep ikutin 
